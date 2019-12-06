@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Spring Boot CMS</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body ng-app="cms">
+
+<!-- Header -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar"
+                    data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">CMS</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#users">Users</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#news">News</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Body -->
+<div class="container">
+    <div ui-view></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+
+<script src="app/app.js" type="text/javascript"></script>
+
+<script src="app/controllers.js" type="text/javascript"></script>
+<script src="app/services.js" type="text/javascript"></script>
+
+<script src="app/components/categories/category-controller.js" type="text/javascript"></script>
+<script src="app/components/categories/category-service.js" type="text/javascript"></script>
+
+<script src="app/components/news/news-controller.js" type="text/javascript"></script>
+<script src="app/components/news/news-service.js" type="text/javascript"></script>
+
+<script src="app/components/users/user-controller.js" type="text/javascript"></script>
+<script src="app/components/users/user-service.js" type="text/javascript"></script>
+
+</body>
+</html>

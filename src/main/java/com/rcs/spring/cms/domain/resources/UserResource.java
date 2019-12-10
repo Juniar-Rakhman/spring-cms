@@ -16,9 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @author claudioed on 29/10/17. Project cms
- */
 @RestController
 @RequestMapping("/api/user")
 public class UserResource {

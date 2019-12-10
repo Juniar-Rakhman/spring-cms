@@ -1,6 +1,7 @@
 package com.rcs.spring.cms.domain.models;
 
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.thymeleaf.util.StringUtils;
 
 import java.util.HashSet;
@@ -10,6 +11,7 @@ import java.util.Set;
  * @author claudioed on 28/10/17. Project cms
  */
 @Data
+@Document(collection = "news")
 public class News {
 
     String id;

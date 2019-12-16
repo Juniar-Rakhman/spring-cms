@@ -5,11 +5,13 @@ import com.rcs.spring.cms.domain.models.Category;
 import com.rcs.spring.cms.domain.repository.CategoryRepository;
 import com.rcs.spring.cms.domain.vo.CategoryRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class CategoryService {
 
     private final CategoryRepository categoryRepository;

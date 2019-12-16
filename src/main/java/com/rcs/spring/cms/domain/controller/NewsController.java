@@ -1,4 +1,4 @@
-package com.rcs.spring.cms.domain.resources;
+package com.rcs.spring.cms.domain.controller;
 
 import com.rcs.spring.cms.domain.models.News;
 import com.rcs.spring.cms.domain.models.Review;
@@ -22,7 +22,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/news")
-public class NewsResource {
+public class NewsController {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<News> findOne(@PathVariable("id") String id) {

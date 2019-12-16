@@ -1,4 +1,4 @@
-package com.rcs.spring.cms.domain.resources;
+package com.rcs.spring.cms.domain.controller;
 
 import com.rcs.spring.cms.domain.models.User;
 import com.rcs.spring.cms.domain.vo.UserRequest;
@@ -18,7 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/user")
-public class UserResource {
+public class UserController {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<User> findOne(@PathVariable("id") String id) {

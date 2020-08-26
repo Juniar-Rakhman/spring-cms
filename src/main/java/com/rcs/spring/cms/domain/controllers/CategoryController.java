@@ -1,12 +1,7 @@
 package com.rcs.spring.cms.domain.controllers;
 
-import com.rcs.spring.cms.domain.entities.Category;
-import com.rcs.spring.cms.domain.service.CategoryService;
-import com.rcs.spring.cms.domain.requests.CategoryRequest;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,11 +14,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.rcs.spring.cms.domain.entities.Category;
+import com.rcs.spring.cms.domain.requests.CategoryRequest;
+import com.rcs.spring.cms.domain.service.CategoryService;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("/api/category")
-@Api(tags = "category", description = "Category API")
+@Api(tags = "category")
 public class CategoryController {
 
     private final CategoryService categoryService;
@@ -70,6 +72,7 @@ public class CategoryController {
             @ApiResponse(code = 404, message = "Category not found")
     })
     public void removeCategory(@PathVariable("id") String id) {
+        categoryService.delete(id);
     }
 
     @PutMapping("/{id}")
@@ -81,7 +84,12 @@ public class CategoryController {
             @ApiResponse(code = 400, message = "Invalid request")
     })
     public ResponseEntity<Category> updateCategory(@PathVariable("id") String id, CategoryRequest category) {
-        return new ResponseEntity<>(new Category(), HttpStatus.OK);
+        Category result = categoryService.update(id, category);
+        if (result != null) {
+            return new ResponseEntity<>(new Category(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(new Category(), HttpStatus.NOT_FOUND);
+        }
     }
 
 }

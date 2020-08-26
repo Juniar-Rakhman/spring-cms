@@ -5,7 +5,7 @@
     angular.module('cms.modules.category.services', []).service('CategoryService', ['$http',
         function ($http) {
 
-            var serviceAddress = 'http://localhost:8080';
+            var serviceAddress = 'http://rcs-07:9090/';
             var urlCollections = serviceAddress + '/api/category';
             var urlBase = serviceAddress + '/api/category/';
 
@@ -18,6 +18,7 @@
             };
 
             this.create = function (data) {
+                console.log("post data : ", data);
                 return $http.post(urlBase, data);
             };
 

@@ -1,4 +1,4 @@
-package com.rcs.spring.cms.domain.models;
+package com.rcs.spring.cms.domain.entities;
 
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
@@ -10,13 +10,17 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table
-public class Category {
+@Table(name = "system_user")
+public class User {
 
     @Id
-    @GeneratedValue(generator = "system-uuid") //use randomize uuid
-    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     String id;
 
+    String identity;
+
     String name;
+
+    Role role;
 }

@@ -1,7 +1,7 @@
-package com.rcs.spring.cms.domain.resources;
+package com.rcs.spring.cms.domain.controllers;
 
-import com.rcs.spring.cms.domain.models.User;
-import com.rcs.spring.cms.domain.vo.UserRequest;
+import com.rcs.spring.cms.domain.entities.User;
+import com.rcs.spring.cms.domain.requests.UserRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,7 +21,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/user")
-public class UserResource {
+public class UserController {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<User> findOne(@PathVariable("id") String id) {

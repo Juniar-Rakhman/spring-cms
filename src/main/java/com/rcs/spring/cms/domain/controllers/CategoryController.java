@@ -1,8 +1,8 @@
-package com.rcs.spring.cms.domain.resources;
+package com.rcs.spring.cms.domain.controllers;
 
-import com.rcs.spring.cms.domain.models.Category;
-import com.rcs.spring.cms.domain.service.CategoryService;
-import com.rcs.spring.cms.domain.vo.CategoryRequest;
+import com.rcs.spring.cms.domain.entities.Category;
+import com.rcs.spring.cms.domain.services.CategoryService;
+import com.rcs.spring.cms.domain.requests.CategoryRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -24,11 +24,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/category")
 @Api(tags = "category", description = "Category API")
-public class CategoryResource {
+public class CategoryController {
 
     private final CategoryService categoryService;
 
-    public CategoryResource(CategoryService categoryService) {
+    public CategoryController(CategoryService categoryService) {
         this.categoryService = categoryService;
     }
 

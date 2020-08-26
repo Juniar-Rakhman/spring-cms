@@ -1,9 +1,9 @@
 package com.rcs.spring.cms.domain.service;
 
 import com.rcs.spring.cms.domain.exceptions.CategoryNotFoundException;
-import com.rcs.spring.cms.domain.models.Category;
-import com.rcs.spring.cms.domain.repository.CategoryRepository;
-import com.rcs.spring.cms.domain.vo.CategoryRequest;
+import com.rcs.spring.cms.domain.entities.Category;
+import com.rcs.spring.cms.domain.repos.CategoryRepository;
+import com.rcs.spring.cms.domain.requests.CategoryRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

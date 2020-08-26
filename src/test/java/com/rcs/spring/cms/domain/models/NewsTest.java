@@ -8,6 +8,9 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.rcs.spring.cms.domain.entities.News;
+import com.rcs.spring.cms.domain.entities.User;
+
 /**
  * @author claudioed on 29/10/17. Project cms
  */

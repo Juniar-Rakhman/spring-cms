@@ -1,8 +1,8 @@
-package com.rcs.spring.cms.domain.controller;
+package com.rcs.spring.cms.domain.controllers;
 
-import com.rcs.spring.cms.domain.models.Category;
+import com.rcs.spring.cms.domain.entities.Category;
 import com.rcs.spring.cms.domain.service.CategoryService;
-import com.rcs.spring.cms.domain.vo.CategoryRequest;
+import com.rcs.spring.cms.domain.requests.CategoryRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

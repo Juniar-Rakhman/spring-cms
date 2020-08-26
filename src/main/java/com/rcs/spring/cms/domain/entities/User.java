@@ -1,15 +1,19 @@
-package com.rcs.spring.cms.domain.models;
+package com.rcs.spring.cms.domain.entities;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document(collection = "category")
-public class Category {
+@Document(collection = "users")
+public class User {
 
     @Id
     String id;
 
+    String identity;
+
     String name;
+
+    Role role;
 }

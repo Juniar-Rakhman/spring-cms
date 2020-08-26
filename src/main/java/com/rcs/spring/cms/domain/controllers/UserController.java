@@ -1,7 +1,7 @@
-package com.rcs.spring.cms.domain.controller;
+package com.rcs.spring.cms.domain.controllers;
 
-import com.rcs.spring.cms.domain.models.User;
-import com.rcs.spring.cms.domain.vo.UserRequest;
+import com.rcs.spring.cms.domain.entities.User;
+import com.rcs.spring.cms.domain.requests.UserRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;

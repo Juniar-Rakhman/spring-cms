@@ -1,6 +1,6 @@
-package com.rcs.spring.cms.domain.vo;
+package com.rcs.spring.cms.domain.requests;
 
-import com.rcs.spring.cms.domain.models.Role;
+import com.rcs.spring.cms.domain.entities.Role;
 import lombok.Data;
 
 /**

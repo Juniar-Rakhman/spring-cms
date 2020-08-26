@@ -1,6 +1,6 @@
-package com.rcs.spring.cms.domain.repository;
+package com.rcs.spring.cms.domain.repos;
 
-import com.rcs.spring.cms.domain.models.Category;
+import com.rcs.spring.cms.domain.entities.Category;
 import java.util.List;
 
 public interface CategoryRepository extends AbstractRepository<Category> {

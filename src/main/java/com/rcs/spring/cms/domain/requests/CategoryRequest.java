@@ -1,4 +1,4 @@
-package com.rcs.spring.cms.domain.vo;
+package com.rcs.spring.cms.domain.requests;
 
 import lombok.Data;
 

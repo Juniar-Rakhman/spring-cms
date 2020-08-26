@@ -1,4 +1,4 @@
-package com.rcs.spring.cms.domain.models;
+package com.rcs.spring.cms.domain.entities;
 
 import lombok.Data;
 

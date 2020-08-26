@@ -1,9 +1,9 @@
 package com.rcs.spring.cms.domain.service;
 
 import com.rcs.spring.cms.domain.exceptions.UserNotFoundException;
-import com.rcs.spring.cms.domain.models.User;
-import com.rcs.spring.cms.domain.repository.UserRepository;
-import com.rcs.spring.cms.domain.vo.UserRequest;
+import com.rcs.spring.cms.domain.entities.User;
+import com.rcs.spring.cms.domain.repos.UserRepository;
+import com.rcs.spring.cms.domain.requests.UserRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

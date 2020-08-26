@@ -1,6 +1,6 @@
-package com.rcs.spring.cms.domain.repository;
+package com.rcs.spring.cms.domain.repos;
 
-import com.rcs.spring.cms.domain.models.User;
+import com.rcs.spring.cms.domain.entities.User;
 
 import java.util.Optional;
 

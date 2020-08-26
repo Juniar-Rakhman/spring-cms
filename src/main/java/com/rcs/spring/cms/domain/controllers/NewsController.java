@@ -1,8 +1,8 @@
-package com.rcs.spring.cms.domain.controller;
+package com.rcs.spring.cms.domain.controllers;
 
-import com.rcs.spring.cms.domain.models.News;
-import com.rcs.spring.cms.domain.models.Review;
-import com.rcs.spring.cms.domain.vo.NewsRequest;
+import com.rcs.spring.cms.domain.entities.News;
+import com.rcs.spring.cms.domain.entities.Review;
+import com.rcs.spring.cms.domain.requests.NewsRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;

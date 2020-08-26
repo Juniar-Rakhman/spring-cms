@@ -1,7 +1,7 @@
-package com.rcs.spring.cms.domain.vo;
+package com.rcs.spring.cms.domain.requests;
 
-import com.rcs.spring.cms.domain.models.Category;
-import com.rcs.spring.cms.domain.models.Tag;
+import com.rcs.spring.cms.domain.entities.Category;
+import com.rcs.spring.cms.domain.entities.Tag;
 import lombok.Data;
 
 import java.util.Set;

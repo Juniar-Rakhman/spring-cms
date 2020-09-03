@@ -1,9 +1,13 @@
 package com.rcs.spring.cms.domain.repos;
 
-import com.rcs.spring.cms.domain.entities.Category;
-import java.util.List;
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 
-public interface CategoryRepository extends AbstractRepository<Category> {
-    List<Category> findByName(String name);
-    List<Category> findByNameStartingWithIgnoreCase(String name);
+import com.rcs.spring.cms.domain.entities.Category;
+
+import reactor.core.publisher.Flux;
+
+public interface CategoryRepository extends ReactiveMongoRepository<Category, String> {
+    Flux<Category> findByName(String name);
+
+    Flux<Category> findByNameStartingWithIgnoreCase(String name);
 }

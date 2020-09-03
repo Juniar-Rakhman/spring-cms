@@ -1,7 +1,5 @@
 package com.rcs.spring.cms.domain.controllers;
 
-import java.util.List;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,14 +16,11 @@ import com.rcs.spring.cms.domain.entities.Category;
 import com.rcs.spring.cms.domain.requests.CategoryRequest;
 import com.rcs.spring.cms.domain.service.CategoryService;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/api/category")
-@Api(tags = "category")
 public class CategoryController {
 
     private final CategoryService categoryService;
@@ -35,60 +30,34 @@ public class CategoryController {
     }
 
     @GetMapping(value = "/{id}")
-    @ApiOperation(value = "Find category", notes = "Find the Category by ID")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Category found"),
-            @ApiResponse(code = 404, message = "Category not found"),
-    })
-    public ResponseEntity<Category> findOne(@PathVariable("id") String id) {
-        return ResponseEntity.ok(Category.builder().build());
+    public ResponseEntity<Mono<Category>> findOne(@PathVariable("id") String id) {
+        return ResponseEntity.ok(categoryService.findOne(id));
     }
 
     @GetMapping
-    @ApiOperation(value = "List categories", notes = "List all categories")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Categories found"),
-            @ApiResponse(code = 404, message = "Categories not found")
-    })
-    public ResponseEntity<List<Category>> findAll() {
+    public ResponseEntity<Flux<Category>> findAll() {
         return ResponseEntity.ok(categoryService.findAll());
     }
 
     @PostMapping
-    @ApiOperation(value = "Create category", notes = "It permits to create a new category")
-    @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Category created successfully"),
-            @ApiResponse(code = 400, message = "Invalid request")
-    })
-    public ResponseEntity<Category> newCategory(@RequestBody CategoryRequest category) {
+    public ResponseEntity<Mono<Category>> newCategory(@RequestBody CategoryRequest category) {
         return new ResponseEntity<>(categoryService.create(category), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @ApiOperation(value = "Remove category", notes = "It permits to remove a category")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Category removed successfully"),
-            @ApiResponse(code = 404, message = "Category not found")
-    })
     public void removeCategory(@PathVariable("id") String id) {
         categoryService.delete(id);
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @ApiOperation(value = "Update category", notes = "It permits to update a category")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Category update successfully"),
-            @ApiResponse(code = 404, message = "Category not found"),
-            @ApiResponse(code = 400, message = "Invalid request")
-    })
-    public ResponseEntity<Category> updateCategory(@PathVariable("id") String id, CategoryRequest category) {
-        Category result = categoryService.update(id, category);
+    public ResponseEntity<Mono<Category>> updateCategory(@PathVariable("id") String id, CategoryRequest category) {
+        Mono<Category> result = categoryService.update(id, category);
         if (result != null) {
-            return new ResponseEntity<>(Category.builder().build(), HttpStatus.OK);
+            return new ResponseEntity<>(result, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(Category.builder().build(), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
 

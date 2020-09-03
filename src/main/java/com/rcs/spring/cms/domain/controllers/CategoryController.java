@@ -41,7 +41,7 @@ public class CategoryController {
             @ApiResponse(code = 404, message = "Category not found"),
     })
     public ResponseEntity<Category> findOne(@PathVariable("id") String id) {
-        return ResponseEntity.ok(new Category());
+        return ResponseEntity.ok(Category.builder().build());
     }
 
     @GetMapping
@@ -86,9 +86,9 @@ public class CategoryController {
     public ResponseEntity<Category> updateCategory(@PathVariable("id") String id, CategoryRequest category) {
         Category result = categoryService.update(id, category);
         if (result != null) {
-            return new ResponseEntity<>(new Category(), HttpStatus.OK);
+            return new ResponseEntity<>(Category.builder().build(), HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(new Category(), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(Category.builder().build(), HttpStatus.NOT_FOUND);
         }
     }
 

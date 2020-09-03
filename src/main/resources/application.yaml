@@ -2,7 +2,7 @@ spring:
   data:
     mongodb:
       database: cms
-      host: localhost
+      host: mongodb_cms
       port: 27017
 server:
   port: 9090

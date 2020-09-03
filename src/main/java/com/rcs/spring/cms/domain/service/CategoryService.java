@@ -33,8 +33,9 @@ public class CategoryService {
     }
 
     public Category create(CategoryRequest request) {
-        Category category = new Category();
-        category.setName(request.getName());
+        Category category = Category.builder()
+            .name(request.getName())
+            .build();
         return this.categoryRepository.save(category);
     }
 

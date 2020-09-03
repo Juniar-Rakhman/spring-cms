@@ -71,7 +71,7 @@
                 <configuration>
                     <images>
                         <image>
-                            <name>springfivebyexample/${project.build.finalName}</name>
+                            <name>yangmulia/${project.build.finalName}</name>
                             <build>
                                 <from>openjdk:latest</from>
                                 <entryPoint>java -Dspring.profiles.active=container -jar /application/${project.build.finalName}.jar</entryPoint>
@@ -91,7 +91,7 @@
                                     <tag>latest</tag>
                                 </tags>
                                 <ports>
-                                    <port>8080</port>
+                                    <port>9090</port>
                                 </ports>
                             </build>
                             <run>
